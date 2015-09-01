@@ -1,0 +1,126 @@
+<Html>
+<Head>
+<Script language="JavaScript">
+<!–
+function MM_validateForm() { //v2.0
+var i,objStr,field,theCheck,atPos,theNum,colonPos,min,max,errors=”;
+for (i=0; i<(MM_validateForm.arguments.length-2);
+i+=3) {
+objStr = MM_validateForm.arguments[(navigator.appName
+== ‘Netscape’)?i:i+1];
+if ((objStr.indexOf(‘document.layers[‘)==0 &&
+document.layers==null) ||
+(objStr.indexOf(‘document.all[‘) ==0 && document.all
+==null))
+objStr = ‘document’+objStr.substring(objStr.substring(0,objStr.lastIndexOf(‘.’)).
+lastIndexOf(‘.’),objStr.length); //fix layer ref if
+not supp
+field = eval(objStr);
+field.name = (field.name)?field.name:objStr;
+theCheck = MM_validateForm.arguments[i+2];
+if (field.value) { //IF NOT EMPTY FIELD
+if (theCheck.indexOf(‘isEmail’) != -1) { //CHECK EMAIL
+atPos = field.value.indexOf(‘@’);
+if (atPos < 1 || atPos == (field.value.length – 1))
+errors += ‘- ‘+field.name+’ must contain an e-mail address.
+‘;
+} else if (theCheck != ‘R’) { //START NUM CHECKS
+theNum = parseFloat(field.value);
+if (field.value != ”+theNum) errors += ‘- ‘+field.name+’
+must contain a number.
+‘;
+if (theCheck.indexOf(‘inRange’) != -1) { //CHECK RANGE
+colonPos = theCheck.indexOf(‘:’);
+min = theCheck.substring(8,colonPos);
+max = theCheck.substring(colonPos+1,theCheck.length);
+if (theNum < min || max < theNum) //bad range
+errors += ‘- ‘+field.name+’ must contain a number between
+‘+min+’ and ‘+max+’.
+‘;
+} } }
+else if (theCheck.charAt(0) == ‘R’) errors += ‘- ‘+field.name+’
+is required.
+‘;
+}
+if (errors) alert(‘The following error(s) occurred:
+‘+
+errors);
+document.MM_returnValue = (errors == ”)
+}
+//–>
+</script>
+</head>
+<body bgcolor="#ffffff" link="#022941"
+vlink="#FFFFFF" alink="#FFFFFF">
+<table width="790" border="0"
+cellspacing="0" cellpadding="0"
+height="100%" align="center" vspace="0"
+hspace="0">
+<tr align="center">
+<th height="38" valign="top"><font
+face="Verdana, Arial, Helvetica, sans-serif"
+size="5" color="#022941">Servi&ccedil;o
+de mensagens escritas atrav&eacute;s de e-mail</font></th>
+</tr>
+<tr align="center">
+<td height="306" valign="top">
+<form method="post" action="Confirma.asp"
+name="SMS" onSubmit="MM_validateForm(‘document.SMS.DeNome’,
+‘document.SMS.DeNome’,’R’,’document.SMS.NumeroTelemovel’,
+‘document.SMS.NumeroTelemovel’,’RinRange910000000:969999999′,
+‘document.SMS.Mensagem’,’document.SMS.Mensagem’,’R’);return
+document.MM_returnValue">
+<table border="0"
+cellspacing="2" cellpadding="2">
+<tr bgcolor="#022941">
+<td width="500"><b><font face="Verdana,
+Arial, Helvetica, sans-serif" size="4"
+color="#FFFFFF">:.
+SMS – Servi&ccedil;o Mensagens Escritas</font></b></td>
+</tr>
+<tr valign="top">
+<td>
+<p><font face="Verdana, Arial, Helvetica,
+sans-serif" size="2" color="#022941">De:</font><br>
+&nbsp;&nbsp;
+<input type="text" name="DeNome"
+size="40" maxlength="20">
+<br>
+<font face="Verdana, Arial, Helvetica, sans-serif"
+size="2" color="#022941">Para
+(n&ordm; de telem&oacute;vel):</font><br>
+&nbsp;&nbsp;
+<input type="text" name="NumeroTelemovel"
+size="9" maxlength="9">
+<br>
+<font face="Verdana, Arial, Helvetica, sans-serif"
+size="2" color="#022941">Mensagem:</font><br>
+&nbsp;&nbsp;
+<textarea name="Mensagem" cols="40"
+rows="4"></textarea>
+</p>
+</td>
+</tr>
+<tr bgcolor="#022941">
+<td>
+<input type="submit" name="Submit"
+value=" Enviar ">
+<input type="reset" name="Submit2"
+value=" Limpar ">
+</td>
+</tr>
+</table>
+</form>
+</td>
+</tr>
+<tr align="left">
+<td height="33"><font face="Verdana,
+Arial, Helvetica, sans-serif" size="2"
+color="#022941">Por:
+<a href="mailto:josebarros@netytal.pt">Jos&eacute;
+Barros</a></font></td>
+</tr>
+</table>
+<br>
+</body>
+</html>

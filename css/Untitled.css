@@ -1,0 +1,31 @@
+/*Background pagina de painel */
+background {
+    background:center no-repeat fixed url(../img/Beach_wedding2.png);
+}
+
+.alpha60 {
+
+/* Fallback for web browsers that doesn't support RGBa */
+
+background: rgb(0, 0, 0);
+
+/* RGBa with 0.6 opacity */
+
+background: rgba(0, 0, 0, 0.6);
+
+}
+
+/*div.container-background {
+    opacity: 1.0;
+} */
+
+div.content {
+	background-color: rgba(0,0,0,0.5);
+	color:#fff;
+	font-family: 'Bitter', serif;
+}
+
+div.taskList {
+    
+    
+}
